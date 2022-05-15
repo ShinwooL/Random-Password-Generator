@@ -1,0 +1,36 @@
+learnSong = True
+userInput = [1,2,3,4,5,6,7,8,9,10]
+songName = ["drivers license","MONTERO","STAY (with Justin Bieber)","good 4 u","Levitating (feat. Dababy)","Peaches (feat. Daniel Caesar and Giveon)","Kiss Me More (feat. SZA)","Blinding Lights","Heat Waves","Beggin'"]
+songDetails = ["created by Olivia Rodrigo, 1,335,547,501 plays","created by Lil Nas X, 1,318,908,661 plays","created by The Kid LAROI, 1,580,831,652 plays","created by Olivia Rodrigo, 1,307,528,809 plays","created by Dua Lipa, 1,256,926,625 plays","created by Justin Bieber, 1,052,703,829 plays","created by Doja Cat, 1,081,361,773 plays","created by The Weeknd, 2,843,456,144 plays","created by Glass Animals, 1,334,476,215 plays","created by Maneskin, 948,731,789 plays"]
+
+
+#function
+def songSelector(choice,type):
+  index = 0
+  for i in range(10):
+    if(userInput[i] == int(choice)):
+      break;
+    index = index + 1
+
+  if(type == "name"):
+    print(songName[index] + "\n")
+  else:
+    print(songDetails[index] + "\n")
+
+
+
+
+while(learnSong == True):    
+  t = input("what song do you want to learn about the top 10 list of the year? 1-10 \n")
+  songSelector(t,"name") #call to function
+  
+  p = input("Would you want to learn more about this song? (y/n) \n")
+  if(p == "y"):
+    songSelector(t,"details") #call to function
+    
+  e = input("Do you want to learn about another song? (y/n) \n")
+  if(e == "n"):
+    learnSong = False
+
+
+print("Thank you for using our service!")
